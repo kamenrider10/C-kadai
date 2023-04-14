@@ -1,3 +1,4 @@
+6-4
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,3 +27,162 @@ namespace Problemex5_1
         }
     }
 }
+
+6-5
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Problemex5_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            var arrList = new ArrayList();
+            String str;
+            do{
+                str =Console.ReadLine();
+                arrList.Add(str);
+                Console.WriteLine("文字列を入力:{0}",str);
+            }
+            while(str != "");
+            Console.Write("５文字未満：");
+            
+            for(int i = arrList.Count-1;i>=0;i--){
+                string moji = (string)arrList[i];
+                if(moji.Length>4){
+                    arrList.RemoveAt(i);
+                }
+            }
+            
+            foreach (string a in arrList){
+                Console.Write("{0} ",a);
+            }
+        }
+    }
+}
+
+6-6
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Problemex5_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Random r = new System.Random();
+            var arrList = new ArrayList();
+            
+            while(true){
+                int R = r.Next(11);
+                arrList.Add(R);
+                Console.WriteLine("0～10の値を出力:：{0} ",R);
+                if(R==0){
+                    break;
+                }
+            }
+            
+            for(int j= arrList.Count-1;j>=0;j--){
+                int  s = (int)arrList[j];
+                if(s==2){
+                    arrList.RemoveAt(j);    
+                }
+            }
+            
+            
+            
+            
+            foreach (int ans in arrList){
+                Console.Write("{0} ",ans);
+            }
+        }
+    }
+}
+
+
+6-7
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Problemex5_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Random r = new System.Random();
+            var arrList = new ArrayList();
+            
+            while(true){
+                int R = r.Next(11);
+                Console.WriteLine("0～10の値を出力:{0}",R);
+                if(R==0){
+                    break;
+                }
+                else{
+                    arrList.Add(R);
+                    Console.Write("出力された数：");
+                    foreach(int i in arrList){
+                        Console.Write("{0} ",i);
+                    }
+                    Console.WriteLine();
+                }
+            }
+        }
+    }
+}
+
+
+6-8
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Problemex5_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            var etoj = new Dictionary<string, string>()
+                {
+                    {"cat", "ねこ"},
+                    {"dog", "犬"},
+                    {"bird", "鳥"},
+                    {"tiger","トラ"}
+                };
+                Console.WriteLine("英語で動物の名前を入力してください：");
+                string serch =  Console.ReadLine();
+                string ja;
+                if(etoj.ContainsKey(key: serch) ){
+                    ja = (string)etoj[serch];
+                    Console.WriteLine("「{0}です」",ja);
+                }
+                else{
+                    Console.WriteLine("対応するデータは登録されていません。");
+                }
+        }
+    }
+}
+
