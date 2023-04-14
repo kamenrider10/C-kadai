@@ -1,0 +1,28 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Problemex5_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            var arrList = new ArrayList();
+            String str;
+            do{
+                str =Console.ReadLine();
+                arrList.Add(str);
+                Console.WriteLine("文字列を入力:{0}",str);
+            }
+            while(str != "");
+            foreach (string a in arrList){
+                Console.Write("{0} ",a);
+            }
+        }
+    }
+}
