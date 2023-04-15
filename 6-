@@ -186,3 +186,56 @@ namespace Problemex5_1
     }
 }
 
+6-9
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Problemex5_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            var sutokan = new Dictionary<char, string>()
+                {
+                    {'1', "一"},
+                    {'2', "二"},
+                    {'3', "三"},
+                    {'4',"四"},
+                    {'5',"五"},
+                    {'6',"六"},
+                    {'7',"七"},
+                    {'8',"八"},
+                    {'9',"九"},
+                    {'0',"〇"}
+                };
+                Console.WriteLine("整数の値を入力してください:");
+                string serch =  Console.ReadLine();
+                char su;
+                int len =  serch.Length;
+                int cou = len%3;
+                for(int i = 0;i<len;i++){
+                    su = serch[i];
+                    if(i%3==cou){
+                        Console.Write(",");
+                    }
+                    
+                    if(sutokan.ContainsKey(key: su) ){
+                    string ans = sutokan[su];
+                    Console.Write("{0}",ans);
+                    }
+                    else{
+                        Console.WriteLine("整数の値を入力してください。");
+                        break;
+                    }
+                    
+                }
+        }
+    }
+}
+
