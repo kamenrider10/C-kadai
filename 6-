@@ -284,3 +284,114 @@ namespace Problemex5_1
     }
 }
 
+7-1
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Problemex7_1
+{
+    class Program
+    {
+         //  デリゲートメソッド(関数)を変数のように扱う機能
+        delegate void Delfunc();
+        static void Func1()
+        {
+            Console.WriteLine("Func1");
+        }
+        static void Func2()
+        {
+            Console.WriteLine("Func2");
+        }
+        static void Main(string[] args)
+        {
+            Delfunc df = new Delfunc(Func2);
+            df();
+        }
+    }
+}
+
+7-2
+using System;
+
+namespace Problemex7_2
+{
+    //  デリゲート
+    delegate void Delegatefunc(int num);
+    class Showcharas
+    {
+        //  星を表示
+        public void ShowStars(int num)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                Console.Write("☆");
+            }
+            Console.WriteLine();
+        }
+        // 　四角を表示
+        public void ShowBoxes(int num)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                Console.Write("■");
+            }
+            Console.WriteLine();
+        }
+        //  +を表示
+        public void ShowPlus(int num)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                Console.Write("＋");
+            }
+            Console.WriteLine();
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Showcharas s = new Showcharas();
+            Delegatefunc f = new Delegatefunc(s.ShowStars);
+            f += new Delegatefunc(s.ShowBoxes);
+            f += new Delegatefunc(s.ShowPlus);
+            f(4);
+
+        }
+    }
+}
+
+ 
+
+7-3
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace Problemex7_3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] a = { 0 , 1, 2 };
+            //  配列の内容を表示
+            
+            try
+            {
+                for(int i = 0; i < 4; i++){
+                Console.WriteLine("a[" + i +"]=" + a[i]);
+                }
+            }
+            catch(IndexOutOfRangeException e)
+            {
+                Console.WriteLine("配列の範囲を超えています。");
+            }
+        }
+    }
+}
