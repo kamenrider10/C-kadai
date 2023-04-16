@@ -239,3 +239,48 @@ namespace Problemex5_1
     }
 }
 
+6-10
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Problemex5_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            HashSet<int> list = new HashSet<int>();
+            
+            
+            
+                Console.WriteLine("乱数:");
+                Random r = new System.Random();
+                
+                
+                for(int i = 1;i<=10;i++){
+                    
+                    int R = r.Next(1,11);
+                    
+                    list.Add(R);
+                    
+                    Console.Write("{0} ",R);
+                    
+                }
+                
+                Console.WriteLine();
+                
+                Console.Write("出現した数:");
+                
+                foreach(int j in list){
+                    Console.Write("{0} ",j);
+                }
+                
+        }
+    }
+}
+
